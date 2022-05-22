@@ -1,25 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GeneralPage from "./components/GeneralPage/GeneralPage";
+import InvoiceAddressModalForm from "components/ModalForm/InvoiceAddressModalForm";
+import UseModal from "utils/UseModal";
+import BankDataFormModal from "components/ModalForm/BankDataFormModal";
+import ContactFormForm from "components/ModalForm/ContactFormModal";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllData, deleteData } from "redux/dataSlice";
+import { useState } from "react";
+import Container from "components/Container/Container";
 
 function App() {
+  const { isShowing, toggle } = UseModal();
+  const [step, setStep] = useState(1);
+
+  const dispatch = useDispatch();
+  const visibleData = useSelector(getAllData);
+
+  const nextStep = () => {
+    setStep(step + 1);
+  };
+  const prevStep = () => {
+    setStep(step - 1);
+  };
+  const resetStep = () => {
+    setStep(1);
+  };
+
+  const deleteLine = (lineId: number) => {
+    return dispatch(deleteData(lineId));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <GeneralPage hide={toggle} data={visibleData} onDeleteline={deleteLine} />
+      {isShowing && step === 1 && (
+        <InvoiceAddressModalForm
+          hide={toggle}
+          resetStep={resetStep}
+          nextStep={nextStep}
+        />
+      )}
+      {isShowing && step === 2 && (
+        <BankDataFormModal
+          hide={toggle}
+          nextStep={nextStep}
+          prevStep={prevStep}
+          resetStep={resetStep}
+        />
+      )}
+      {isShowing && step === 3 && (
+        <ContactFormForm
+          hide={toggle}
+          prevStep={prevStep}
+          resetStep={resetStep}
+        />
+      )}
+    </Container>
   );
 }
 

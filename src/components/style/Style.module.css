@@ -1,0 +1,76 @@
+.container {
+  margin: 65px 20px;
+}
+
+.activeButton {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: #fff;
+  background-color: #83ba63;
+  border-radius: 12px;
+  border: 1px solid #83ba63;
+  min-width: 50px;
+  padding: 5px 14px;
+}
+
+.buttonPrevious {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  color: #83ba63;
+  background-color: #fff;
+  border: 1px solid #83ba63;
+  border-radius: 12px;
+  padding: 5px 14px;
+  min-width: 65px;
+}
+
+.buttonCancel {
+  position: absolute;
+  bottom: 30px;
+  right: 195px;
+  color: #83ba63;
+  background-color: #fff;
+  border: 1px solid #83ba63;
+  border-radius: 12px;
+  padding: 5px 14px;
+  min-width: 65px;
+}
+
+.buttonAdd {
+  position: fixed;
+  top: 20px;
+  color: #fff;
+  background-color: #83ba63;
+  border-radius: 12px;
+  border: none;
+  min-width: 50px;
+  padding: 5px 14px;
+}
+
+.tableTitle {
+  background-color: #376b8d;
+  color: #fff;
+}
+
+.formGroup {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.formGroup > label {
+  flex: 1;
+}
+.formGroup > input {
+  flex: 2;
+}
+.formGroup > select {
+  flex: 2;
+}
+.modalClose {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  cursor: pointer;
+}
