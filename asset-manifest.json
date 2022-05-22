@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ship-cheaper-test/static/css/main.9a33952b.css",
+    "main.js": "/ship-cheaper-test/static/js/main.d79a64f0.js",
+    "index.html": "/ship-cheaper-test/index.html",
+    "main.9a33952b.css.map": "/ship-cheaper-test/static/css/main.9a33952b.css.map",
+    "main.d79a64f0.js.map": "/ship-cheaper-test/static/js/main.d79a64f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a33952b.css",
+    "static/js/main.d79a64f0.js"
+  ]
+}
